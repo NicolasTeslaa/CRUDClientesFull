@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CrudClientesAPI.Context.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20230330132648_Initial")]
+    [Migration("20230330154008_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -31,9 +31,6 @@ namespace CrudClientesAPI.Context.Migrations
 
                     b.Property<string>("Celular")
                         .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("DataCadastro")
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("DataNascimento")

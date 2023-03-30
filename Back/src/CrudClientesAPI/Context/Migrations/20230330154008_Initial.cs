@@ -20,8 +20,7 @@ namespace CrudClientesAPI.Context.Migrations
                     CPF = table.Column<string>(type: "TEXT", nullable: false),
                     Celular = table.Column<string>(type: "TEXT", nullable: false),
                     Email = table.Column<string>(type: "TEXT", nullable: false),
-                    DataNascimento = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    DataCadastro = table.Column<DateTime>(type: "TEXT", nullable: false)
+                    DataNascimento = table.Column<DateTime>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {

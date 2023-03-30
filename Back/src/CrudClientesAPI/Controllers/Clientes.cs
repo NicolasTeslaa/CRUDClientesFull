@@ -1,7 +1,7 @@
 using CrudClientesAPI.Context;
 using CrudClientesAPI.Entities;
+using CrudClientesAPI.Entities.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace CrudClientes.Controllers;
 
@@ -26,34 +26,76 @@ public class Clientes : ControllerBase
     [HttpGet("GetById/{id}")]
     public Cliente GetById(string id)
     {
-        return context.Clientes.FirstOrDefault(
-            cliente => cliente.Id == id
-        );
+        var cliente = _context.Clientes.FirstOrDefault(c => c.Id == id);
+
+        if (cliente == null) return NotFound();
+
+        return Ok(cliente);
+
     }
 
     [HttpPost("Create")]
-public async Task<IActionResult> Create( [FromBody] Cliente cliente)
+    public async Task<IActionResult> Create([FromBody] ClienteCreateModel cliente)
     {
         if (!ModelState.IsValid)
         {
             return BadRequest(ModelState);
         }
+        var novoCliente = new Cliente
+        {
+            Id = Guid.NewGuid().ToString(),
+            Celular = cliente.Celular,
+            CPF = cliente.CPF,
+            DataNascimento = cliente.DataNascimento,
+            Email = cliente.Email,
+            NomeCompleto = cliente.NomeCompleto,
+        };
 
-        _context.Clientes.Add(cliente);
+        _context.Clientes.Add(novoCliente);
+
         await _context.SaveChangesAsync();
 
-        return CreatedAtAction(nameof(GetById), new { id = cliente.Id  }, cliente);
+        return Ok();
     }
 
 
-    [HttpDelete("Delete")]
-    public string Delete()
+    [HttpDelete("Delete/{id}")]
+    public IActionResult Delete(string id)
     {
-        return "Exemplo de Post";
+
+        var cliente = _context.Clientes.Find(id);
+
+        if (cliente == null) return NotFound();
+
+        _context.Clientes.Remove(cliente);
+
+        _context.SaveChanges();
+
+        return Ok();
     }
     [HttpPut("Update")]
-    public string Put()
+    public async Task<IActionResult> Update(string id, [FromBody] ClienteUpdateModel cliente)
     {
-        return "Exemplo de Post";
+        var clienteExistente = await _context.Clientes.FindAsync(id);
+
+        if (clienteExistente == null)
+        {
+            return NotFound();
+        }
+
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+
+        clienteExistente.Celular = cliente.Celular;
+        clienteExistente.CPF = cliente.CPF;
+        clienteExistente.DataNascimento = cliente.DataNascimento;
+        clienteExistente.Email = cliente.Email;
+        clienteExistente.NomeCompleto = cliente.NomeCompleto;
+
+        await _context.SaveChangesAsync();
+
+        return Ok();
     }
 }

@@ -1,0 +1,83 @@
+<div class="container mt-2">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Lista de Clientes</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Editar Cliente</li>
+    </ol>
+  </nav>
+
+
+  <div class="card mt-4">
+    <div class="card-header">
+      Editar {{cliente.nomeCompleto}}
+    </div>
+    <div class="card-body">
+      <form action="" class="needs-validation">
+
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <div class="form-label">
+                Nome Completo
+              </div>
+              <input required="" type="text" class="form-control" name="nomeCompleto" [(ngModel)]="cliente.nomeCompleto"
+                maxlength="100">
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="form-group">
+              <div class="form-label">
+                CPF
+              </div>
+              <input required type="text" class="form-control" name="cpf" [(ngModel)]="cliente.cpf" maxlength="11">
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="form-group">
+              <div class="form-label">
+                Celular
+              </div>
+              <input required type="text" class="form-control" placeholder="(00) 0000-0000" name="celular"
+                [(ngModel)]="cliente.celular" maxlength="12">
+            </div>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <div class="form-label">
+                Email
+              </div>
+              <input required type="email" class="form-control" placeholder="email@host.com.br" name="email"
+                [(ngModel)]="cliente.email" maxlength="100">
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <div class="form-label">
+                Data de Nascimento
+              </div>
+              <input required type="date" class="form-control" name="dataNascimento"
+                [(ngModel)]="cliente.dataNascimento">
+            </div>
+
+          </div>
+
+        </div>
+
+      </form>
+      <div class="row mt-2">
+        <div class="col-sm-12 d-flex flex-row-reverse">
+          <button class="btn btn-danger" (click)="validate()">
+            Adicionar Cliente
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+</div>

@@ -3,13 +3,12 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CrudClientesAPI.Entities.Models
 {
-    public class ClienteModel
+    public class ClienteCreateModel
     {
-        public ClienteModel()
+        public ClienteCreateModel()
         {
 
         }
-        public string ?Id { get; set; }
 
         [Required(ErrorMessage = "Informe o nome completo ")]
         public string NomeCompleto { get; set; }

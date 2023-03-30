@@ -30,9 +30,6 @@ namespace CrudClientesAPI.Context.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("DataCadastro")
-                        .HasColumnType("TEXT");
-
                     b.Property<DateTime>("DataNascimento")
                         .HasColumnType("TEXT");
 
