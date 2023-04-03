@@ -24,14 +24,14 @@ public class Clientes : ControllerBase
     }
 
     [HttpGet("GetById/{id}")]
-    public Cliente GetById(string id)
+    public ActionResult<Cliente> GetById(string id)
     {
         var cliente = _context.Clientes.FirstOrDefault(c => c.Id == id);
-
-        if (cliente == null) return NotFound();
-
-        return Ok(cliente);
-
+        if (cliente == null)
+        {
+            return NotFound();
+        }
+        return cliente;
     }
 
     [HttpPost("Create")]
