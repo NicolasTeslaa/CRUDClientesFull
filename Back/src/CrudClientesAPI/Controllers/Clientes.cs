@@ -73,7 +73,7 @@ public class Clientes : ControllerBase
 
         return Ok();
     }
-    [HttpPut("Update")]
+    [HttpPut("Update/{id}")]
     public async Task<IActionResult> Update(string id, [FromBody] ClienteUpdateModel cliente)
     {
         var clienteExistente = await _context.Clientes.FindAsync(id);

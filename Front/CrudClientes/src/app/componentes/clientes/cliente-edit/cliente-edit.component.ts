@@ -9,6 +9,7 @@ import Swal from 'sweetalert2';
   templateUrl: './cliente-edit.component.html',
   styleUrls: ['./cliente-edit.component.css']
 })
+
 export class ClienteEditComponent {
   cliente: ClienteModel;
   clienteId: any
@@ -22,19 +23,21 @@ export class ClienteEditComponent {
     });
   }
 
-
   validate() {
-    this.clientesService.Update(this.cliente)
+    this.clientesService.Update(this.clienteId, this.cliente)
       .toPromise()
-      .then(() => {
-
-        Swal.fire('Sucesso', 'Operador cadastrado com sucesso', 'success')
-          .then(() => {
-            this.router.navigate(['/operadores']);
-          })
+      .then((resultOk) => {
+        Swal.fire({
+          icon: 'success',
+          title: 'Cliente atualizado com sucesso',
+          showConfirmButton: false,
+          timer: 1500
+        })
+        this.router.navigate(['/']);
       })
       .catch(error => {
-        Swal.fire('Erro', error.error, 'error');
+        Swal.fire('Erro ao adicionar cliente!', `${error.message}`, 'error');
       })
+    return;
   }
 }

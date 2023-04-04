@@ -58,7 +58,7 @@
                 Data de Nascimento
               </div>
               <input required type="date" class="form-control" name="dataNascimento"
-                [(ngModel)]="cliente.dataNascimento">
+                [(ngModel)]="cliente.dataNascimento" value="{{cliente.dataNascimento}}">
             </div>
 
           </div>
@@ -66,10 +66,10 @@
         </div>
 
       </form>
-      <div class="row mt-2">
+      <div class="row mt-4">
         <div class="col-sm-12 d-flex flex-row-reverse">
           <button class="btn btn-danger" (click)="validate()">
-            Adicionar Cliente
+            Salvar Alterações
           </button>
         </div>
       </div>

@@ -1,7 +1,10 @@
 <div class="container mt-2">
   <div class="row mt-4">
     <div class="col-sm-6">
-      <div class="h3">Lista de Clientes</div>
+      <ng-container class="mt-4" *ngIf="clientes.length == 0">
+        <h3 class="text-muted">Não há clientes a serem exibidos</h3>
+      </ng-container>
+      <div class="h3" *ngIf="clientes.length > 0">Lista de Clientes</div>
     </div>
     <div class="col-sm-6 d-flex flex-row-reverse">
       <button class="btn btn-danger" routerLink="cliente-add">
@@ -9,7 +12,7 @@
       </button>
     </div>
   </div>
-  <table class="table table-striped mt-4">
+  <table class="table table-striped mt-4" *ngIf="clientes.length > 0">
     <thead>
       <tr>
         <th scope="col"></th>
@@ -24,7 +27,7 @@
     <tbody>
       <tr *ngFor="let cliente of clientes">
         <th class="text-center">
-          <a routerLink="cliente-edit">
+          <a [routerLink]="['/cliente-edit', cliente.id]">
             <svg viewBox="0 0 24 24" width="15" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M17,22H5a3,3,0,0,1-3-3V7A3,3,0,0,1,5,4H9A1,1,0,0,1,9,6H5A1,1,0,0,0,4,7V19a1,1,0,0,0,1,1H17a1,1,0,0,0,1-1V15a1,1,0,0,1,2,0v4A3,3,0,0,1,17,22Z"
@@ -72,5 +75,4 @@
 
     </tbody>
   </table>
-
 </div>

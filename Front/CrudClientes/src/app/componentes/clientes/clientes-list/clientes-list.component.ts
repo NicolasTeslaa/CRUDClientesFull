@@ -39,12 +39,16 @@ export class ClientesListComponent {
             .pipe(map((data) => data))
             .toPromise()
             .then((response) => {
-              Swal.fire(
-                'Sucess',
-                `Cliente foi removido com sucesso`              );
+              Swal.fire({
+                icon: 'success',
+                title: 'Cliente removido com sucesso',
+                showConfirmButton: false,
+                timer: 1500
+              })
               window.location.reload();
 
             })
+
             .catch((error: HttpErrorResponse) => {
               Swal.fire(
                 'Erro',
