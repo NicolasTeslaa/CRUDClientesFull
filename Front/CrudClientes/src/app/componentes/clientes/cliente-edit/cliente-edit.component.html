@@ -49,13 +49,23 @@
                 [(ngModel)]="cliente.email" maxlength="100">
             </div>
           </div>
-          <div class="col-sm-6">
+          <div class="col-sm-3">
             <div class="form-group">
               <div class="form-label">
                 Data de Nascimento
               </div>
               <input required type="date" class="form-control" name="dataNascimento"
                 [(ngModel)]="cliente.dataNascimento" id="dataNascimento">
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="form-group mt-4">
+              <div class="d-flex"
+                style="justify-content: center;">
+                Data de Nascimento Atual:
+                {{cliente.dataNascimento | date:'dd/MM/yyyy' }}
+
+              </div>
             </div>
           </div>
         </div>
@@ -65,11 +75,7 @@
           <button class="btn btn-danger" (click)="validate()" style="margin-left: 10px">
             Salvar Alterações
           </button>
-          <div class="d-flex text-center" style="align-items: center;">
-            Data Atual:
-            {{cliente.dataNascimento | date}}
 
-          </div>
 
         </div>
       </div>

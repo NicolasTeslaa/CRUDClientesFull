@@ -9,13 +9,17 @@ import { ClientesListComponent } from './componentes/clientes/clientes-list/clie
 import { HttpClientModule } from '@angular/common/http';
 import { registerLocaleData } from '@angular/common';
 import localePtBr from '@angular/common/locales/pt';
+import { RegisterComponent } from './componentes/auth/register/register.component';
+import { LoginComponent } from './componentes/auth/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ClienteAddComponent,
     ClienteEditComponent,
-    ClientesListComponent
+    ClientesListComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

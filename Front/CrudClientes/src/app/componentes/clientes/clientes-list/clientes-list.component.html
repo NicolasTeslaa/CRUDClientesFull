@@ -43,7 +43,7 @@
         <td>{{cliente.cpf}}</td>
         <td>{{cliente.celular}}</td>
         <td>{{cliente.email}}</td>
-        <td>{{cliente.dataNascimento | date}}</td>
+        <td>{{cliente.dataNascimento | date:'dd/MM/yyyy'}}</td>
         <td>
           <a (click)="removerCliente(cliente.id)" style="cursor: pointer;">
             <svg height="30" id="trash" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
