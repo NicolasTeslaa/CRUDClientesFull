@@ -23,7 +23,7 @@ public class LoginController : ControllerBase
         {
             return NotFound();
         }
-        return user;
+        return Ok();
     }
 
 
@@ -42,7 +42,7 @@ public class LoginController : ControllerBase
             DataNascimento = user.DataNascimento,
             NomeCompleto = user.NomeCompleto,
         };
-        _context.Users.Add(novoUser);
+        // _context.Users.Add(novoUser);
         await _context.SaveChangesAsync();
         return Ok();
     }
