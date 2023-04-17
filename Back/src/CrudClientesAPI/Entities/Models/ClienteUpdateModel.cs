@@ -1,14 +1,10 @@
 using System.ComponentModel.DataAnnotations;
 
-
 namespace CrudClientesAPI.Entities.Models
 {
     public class ClienteUpdateModel
     {
-        public ClienteUpdateModel()
-        {
-
-        }
+        public ClienteUpdateModel(){}
         [Required(ErrorMessage = "Informe um ID válido ")]
         public string Id { get; set; }
         [Required(ErrorMessage = "Informe o nome completo ")]

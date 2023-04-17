@@ -2,9 +2,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CrudClientesAPI.Entities.Models
 {
-    public class LoginUpdateModel
+    public class UserUpdateModel
     {
-        public LoginUpdateModel() { }
+        public UserUpdateModel() { }
         [Required(ErrorMessage = "Informe um ID válido ")]
         public string Id { get; set; }
         [Required(ErrorMessage = "Informe o nome completo ")]

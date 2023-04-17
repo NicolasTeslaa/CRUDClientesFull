@@ -2,9 +2,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CrudClientesAPI.Entities.Models
 {
-    public class LoginCreateModel
+    public class UserCreateModel
     {
-        public LoginCreateModel() { }
+        public UserCreateModel() { }
         [Required(ErrorMessage = "Informe o nome completo ")]
         public string NomeCompleto { get; set; }
         [Required(ErrorMessage = "Informe um numero para contato ")]

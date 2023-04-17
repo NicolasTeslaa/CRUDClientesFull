@@ -1,8 +1,8 @@
 namespace CrudClientesAPI.Entities
 {
-    public class Login
+    public class User
     {
-        public Login()
+        public User()
         { }
         public string Id { get; set; }
         public string NomeCompleto { get; set; }
@@ -17,7 +17,5 @@ namespace CrudClientesAPI.Entities
         public string? Naturalidade { get; set; }
         public string Password { get; set; }
         public string ConfirmePassword { get; set; }
-
-
     }
 }
