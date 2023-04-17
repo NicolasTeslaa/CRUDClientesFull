@@ -15,7 +15,7 @@ export class ClientesService {
   constructor(private http: HttpClient) { }
 
   Update(idCliente : string, clienteExistente : ClienteModel) : Observable<any> {
-    return this.http.post<any>( `${this.baseUrl}/Clientes/Update/${idCliente}`, clienteExistente);
+    return this.http.put<any>( `${this.baseUrl}/Clientes/Update/${idCliente}`, clienteExistente);
   }
   GetById(idCliente: string) : Observable<any> {
     return this.http.get<any>( `${this.baseUrl}/Clientes/GetById/${idCliente}`);
