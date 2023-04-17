@@ -11,6 +11,7 @@ import { registerLocaleData } from '@angular/common';
 import localePtBr from '@angular/common/locales/pt';
 import { RegisterComponent } from './componentes/auth/register/register.component';
 import { LoginComponent } from './componentes/auth/login/login.component';
+import { ForgetMeComponent } from './componentes/auth/forget-me/forget-me.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LoginComponent } from './componentes/auth/login/login.component';
     ClienteEditComponent,
     ClientesListComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    ForgetMeComponent
   ],
   imports: [
     BrowserModule,
