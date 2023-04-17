@@ -12,6 +12,9 @@ import localePtBr from '@angular/common/locales/pt';
 import { RegisterComponent } from './componentes/auth/register/register.component';
 import { LoginComponent } from './componentes/auth/login/login.component';
 import { ForgetMeComponent } from './componentes/auth/forget-me/forget-me.component';
+import { ForgetMeEmailComponent } from './componentes/auth/forget-me-email/forget-me-email.component';
+import { ForgetMeRecuperaComponent } from './componentes/auth/forget-me-recupera/forget-me-recupera.component';
+import { DashboardComponent } from './componentes/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { ForgetMeComponent } from './componentes/auth/forget-me/forget-me.compon
     ClientesListComponent,
     RegisterComponent,
     LoginComponent,
-    ForgetMeComponent
+    ForgetMeComponent,
+    ForgetMeEmailComponent,
+    ForgetMeRecuperaComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
