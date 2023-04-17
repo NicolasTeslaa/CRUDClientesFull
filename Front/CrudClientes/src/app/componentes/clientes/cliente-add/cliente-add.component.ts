@@ -31,7 +31,7 @@ export class ClienteAddComponent {
           showConfirmButton: false,
           timer: 1500
         })
-        this.router.navigate(['/']);
+        this.router.navigate(['/clientes']);
 
       })
       .catch(error => {

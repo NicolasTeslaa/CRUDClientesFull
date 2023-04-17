@@ -13,6 +13,7 @@ import { DashboardComponent } from './componentes/dashboard/dashboard.component'
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'cliente-add', component: ClienteAddComponent },
+  { path: 'clientes', component: ClientesListComponent },
   { path: 'cliente-edit/:id', component: ClienteEditComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
