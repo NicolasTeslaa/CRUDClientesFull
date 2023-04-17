@@ -1,6 +1,5 @@
 using System.ComponentModel.DataAnnotations;
 
-
 namespace CrudClientesAPI.Entities.Models
 {
     public class ClienteCreateModel
