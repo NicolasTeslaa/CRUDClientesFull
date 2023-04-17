@@ -5,15 +5,12 @@
       <li class="breadcrumb-item active" aria-current="page">Editar Cliente</li>
     </ol>
   </nav>
-
-
   <div class="card mt-4">
     <div class="card-header">
       Editar {{cliente.nomeCompleto}}
     </div>
     <div class="card-body">
-      <form action="" class="needs-validation">
-
+      <form class="needs-validation">
         <div class="row">
           <div class="col-sm-6">
             <div class="form-group">
@@ -58,26 +55,24 @@
                 Data de Nascimento
               </div>
               <input required type="date" class="form-control" name="dataNascimento"
-                [(ngModel)]="cliente.dataNascimento" value="{{cliente.dataNascimento}}">
+                [(ngModel)]="cliente.dataNascimento" id="dataNascimento">
             </div>
+          </div>
+        </div>
+      </form>
+      <div class="row mt-4">
+        <div class="col-sm-12 d-flex flex-row-reverse">
+          <button class="btn btn-danger" (click)="validate()" style="margin-left: 10px">
+            Salvar Alterações
+          </button>
+          <div class="d-flex text-center" style="align-items: center;">
+            Data Atual:
+            {{cliente.dataNascimento | date}}
 
           </div>
 
         </div>
-
-      </form>
-      <div class="row mt-4">
-        <div class="col-sm-12 d-flex flex-row-reverse">
-          <button class="btn btn-danger" (click)="validate()">
-            Salvar Alterações
-          </button>
-        </div>
       </div>
     </div>
   </div>
-
-
-
-
-
 </div>

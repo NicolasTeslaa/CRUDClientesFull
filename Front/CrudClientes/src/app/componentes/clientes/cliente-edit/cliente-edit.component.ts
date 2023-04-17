@@ -24,7 +24,7 @@ export class ClienteEditComponent {
   }
 
   validate() {
-    this.clientesService.Update(this.clienteId,this.cliente)
+    this.clientesService.Update(this.clienteId, this.cliente)
       .toPromise()
       .then((resultOk) => {
         Swal.fire({

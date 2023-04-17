@@ -7,6 +7,8 @@ import { ClienteAddComponent } from './componentes/clientes/cliente-add/cliente-
 import { ClienteEditComponent } from './componentes/clientes/cliente-edit/cliente-edit.component';
 import { ClientesListComponent } from './componentes/clientes/clientes-list/clientes-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { registerLocaleData } from '@angular/common';
+import localePtBr from '@angular/common/locales/pt';
 
 @NgModule({
   declarations: [
@@ -26,3 +28,5 @@ import { HttpClientModule } from '@angular/common/http';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+registerLocaleData(localePtBr);
+
