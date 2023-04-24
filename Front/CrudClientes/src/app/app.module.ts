@@ -42,7 +42,7 @@ import { provideEnvironmentNgxMask } from 'ngx-mask';
     FormsModule,
     HttpClientModule,
     AppRoutingModule
-  ],
+    ],
   providers: [
     provideEnvironmentNgxMask(),
   ],
