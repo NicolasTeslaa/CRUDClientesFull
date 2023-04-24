@@ -9,19 +9,24 @@ import { ForgetMeComponent } from './componentes/auth/forget-me/forget-me.compon
 import { ForgetMeEmailComponent } from './componentes/auth/forget-me-email/forget-me-email.component';
 import { ForgetMeRecuperaComponent } from './componentes/auth/forget-me-recupera/forget-me-recupera.component';
 import { DashboardComponent } from './componentes/dashboard/dashboard.component';
+import { UserAddComponent } from './componentes/users/user-add/user-add.component';
+import { UsersListComponent } from './componentes/users/users-list/users-list.component';
+import { UserEditComponent } from './componentes/users/user-edit/user-edit.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'cliente-add', component: ClienteAddComponent },
   { path: 'clientes', component: ClientesListComponent },
   { path: 'cliente-edit/:id', component: ClienteEditComponent },
+  { path: 'user-add', component: UserAddComponent },
+  { path: 'users', component: UsersListComponent },
+  { path: 'user-edit/:id', component: UserEditComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'forget-me', component: ForgetMeComponent },
   { path: 'forget-me-recupera', component: ForgetMeRecuperaComponent },
   { path: 'forget-me-email', component: ForgetMeEmailComponent },
   { path: 'dashboard', component: DashboardComponent }
-
 ];
 
 @NgModule({

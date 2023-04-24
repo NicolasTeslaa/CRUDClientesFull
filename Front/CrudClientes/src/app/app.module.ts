@@ -15,6 +15,10 @@ import { ForgetMeComponent } from './componentes/auth/forget-me/forget-me.compon
 import { ForgetMeEmailComponent } from './componentes/auth/forget-me-email/forget-me-email.component';
 import { ForgetMeRecuperaComponent } from './componentes/auth/forget-me-recupera/forget-me-recupera.component';
 import { DashboardComponent } from './componentes/dashboard/dashboard.component';
+import { UsersListComponent } from './componentes/users/users-list/users-list.component';
+import { UserAddComponent } from './componentes/users/user-add/user-add.component';
+import { UserEditComponent } from './componentes/users/user-edit/user-edit.component';
+import { provideEnvironmentNgxMask } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,10 @@ import { DashboardComponent } from './componentes/dashboard/dashboard.component'
     ForgetMeComponent,
     ForgetMeEmailComponent,
     ForgetMeRecuperaComponent,
-    DashboardComponent
+    DashboardComponent,
+    UsersListComponent,
+    UserAddComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +43,9 @@ import { DashboardComponent } from './componentes/dashboard/dashboard.component'
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    provideEnvironmentNgxMask(),
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

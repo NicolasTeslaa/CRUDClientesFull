@@ -28,7 +28,8 @@
               <div class="form-label">
                 CPF
               </div>
-              <input required type="text" class="form-control" name="cpf" [(ngModel)]="cliente.cpf" maxlength="11">
+              <input required mask="000.000.000-99" placeholder="000.000.000-00" type="text" class="form-control"
+                name="cpf" [(ngModel)]="cliente.cpf" maxlength="11">
             </div>
           </div>
           <div class="col-sm-3">
