@@ -11,6 +11,7 @@ namespace CrudClientesAPI.Context
 
         }
         public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<User> Usuarios { get; set; }
 
     }
 }
