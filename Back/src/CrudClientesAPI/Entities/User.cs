@@ -1,8 +1,8 @@
 namespace CrudClientesAPI.Entities
 {
-    public class User
+    public class Usuario
     {
-        public User() { }
+        public Usuario() { }
         
         public string Id { get; set; }
         public string NomeCompleto { get; set; }
