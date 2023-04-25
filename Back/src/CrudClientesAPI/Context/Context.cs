@@ -6,12 +6,8 @@ namespace CrudClientesAPI.Context
     public class Context : DbContext
     {
         public Context(){}
-
-        public Context(DbContextOptions<Context> options) : base(options){
-
-        }
+        public Context(DbContextOptions<Context> options) : base(options){}
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
-
     }
 }
