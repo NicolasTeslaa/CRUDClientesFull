@@ -7,10 +7,10 @@ namespace CrudClientes.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class User : ControllerBase
+public class UsuarioController : ControllerBase
 {
     private readonly Context _context;
-    public User(Context context)
+    public UsuarioController(Context context)
     {
         _context = context;
     }
@@ -53,14 +53,12 @@ public class User : ControllerBase
 
         return Ok();
     }
-
-
     [HttpPut("Update/{id}")]
     public async Task<IActionResult> Update(string id, [FromBody] UserUpdateModel usuario)
     {
-        var clienteExistente = await _context.Clientes.FindAsync(id);
+        var usuarioExistente = await _context.Usuarios.FindAsync(id);
 
-        if (clienteExistente == null)
+        if (usuarioExistente == null)
         {
             return NotFound();
         }
@@ -70,13 +68,25 @@ public class User : ControllerBase
             return BadRequest(ModelState);
         }
 
-        clienteExistente.Celular = cliente.Celular;
-        clienteExistente.CPF = cliente.CPF;
-        clienteExistente.DataNascimento = cliente.DataNascimento;
-        clienteExistente.Email = cliente.Email;
-        clienteExistente.NomeCompleto = cliente.NomeCompleto;
+        usuarioExistente.Email = usuario.Email;
+        usuarioExistente.NomeCompleto = usuario.NomeCompleto;
+        usuarioExistente.Password = usuario.Password;
+        usuarioExistente.ConfPassword = usuario.ConfPassword;
 
         await _context.SaveChangesAsync();
+
+        return Ok();
+    }
+    [HttpDelete("Delete/{id}")]
+    public IActionResult Delete(string id)
+    {
+        var usuario = _context.Usuarios.Find(id);
+
+        if (usuario == null) return NotFound();
+
+        _context.Usuarios.Remove(usuario);
+
+        _context.SaveChanges();
 
         return Ok();
     }

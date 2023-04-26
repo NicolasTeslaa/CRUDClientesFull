@@ -87,7 +87,6 @@ public class Clientes : ControllerBase
     [HttpDelete("Delete/{id}")]
     public IActionResult Delete(string id)
     {
-
         var cliente = _context.Clientes.Find(id);
 
         if (cliente == null) return NotFound();
