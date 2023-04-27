@@ -16,17 +16,7 @@ builder.Services.AddEntityFrameworkSqlServer()
     );
 
 
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy(name: "MyPolicy",
-    policy =>
-    {
-        policy.WithOrigins("localhost:4200", "http://localhost:4200", "https://localhost:4200")
-        .AllowAnyHeader()
-        .AllowAnyMethod()
-        .AllowAnyOrigin();
-    });
-});
+
 
 
 
