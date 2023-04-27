@@ -3,63 +3,52 @@
         <div class=" ">
             <div class="row">
                 <div class="col">
-                    <div class="card mt-5">
+                    <div class="card mt-4">
                         <div class="card-header">
                             Registre-se na nossa plataforma
                         </div>
                         <div class="card-body">
-                            <form>
-                                <div class="row">
+                            <form class="needs-validation">
+                                <div class="row ">
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <input class="form-control" type="email" placeholder="Email" />
+                                            <input class="form-control" type="text" placeholder="Nome Completo" name="nomeCompleto" [(ngModel)]="usuario.nomeCompleto"/>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <input class="form-control" type="number" placeholder="Celular" />
-                                        </div>
-                                    </div>
+                                      <div class="form-group">
+                                          <input class="form-control" type="email" placeholder="Email" name="email" [(ngModel)]="usuario.email"/>
+                                      </div>
+                                  </div>
+
                                 </div>
                                 <div class="row mt-3">
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <input class="form-control" type="text" placeholder="Nome Completo" />
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <input class="form-control" type="date" placeholder="Data de Nascimento" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row mt-3">
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <input class="form-control" type="password" placeholder="Senha" />
+                                            <input class="form-control" type="password" placeholder="Senha" name="password" [(ngModel)]="usuario.password"/>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <input class="form-control" type="password"
-                                                placeholder="Confirme sua senha" />
+                                                placeholder="Confirme sua senha" name="confPassword" [(ngModel)]="usuario.confPassword" />
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row mt-3">
+                                <!-- <div class="row mt-3">
                                     <div class="form-group">
                                         <div class="form-label">
                                             Foto de Perfil
                                         </div>
                                         <input class="form-control" type="file" placeholder="" />
                                     </div>
-                                </div>
+                                </div> -->
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col">
                     <div class="card mt-2">
                         <div class="card-header">
@@ -139,10 +128,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="row mt-2">
                 <div class="col-sm-4">
-                    <button class="btn btn-danger">Registrar-me</button>
+                    <button class="btn btn-danger" (click)="validate()">Registrar-me</button>
                 </div>
                 <div class="col-sm-8">
                     <div class="d-flex align-items-center text-white justify-content-end" style="font-size: 1.2rem;">
