@@ -8,33 +8,60 @@
     </svg>
   </button>
   <a routerLink="/dashboard"><img src="../assets/img/favicon.ico.png" height="30" alt=""></a>
-  <ul class="navbar-nav align-items-center ms-auto d-print-none">
+
+
+
+
+  <ul class="navbar-nav align-items-center ms-auto">
+
+    <!-- Navbar Search Dropdown-->
+    <!-- * * Note: * * Visible only below the lg breakpoint-->
+    <li class="nav-item dropdown no-caret me-3 d-lg-none">
+      <a class="btn btn-icon btn-transparent-light dropdown-toggle" id="searchDropdown" href="#" role="button"
+        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i data-feather="search"></i></a>
+      <!-- Dropdown - Search-->
+      <div class="dropdown-menu dropdown-menu-end p-3 shadow animated--fade-in-up" aria-labelledby="searchDropdown">
+        <form class="form-inline me-auto w-100">
+          <div class="input-group input-group-joined input-group-solid">
+            <input class="form-control pe-0" type="text" placeholder="Search for..." aria-label="Proce"
+              aria-describedby="basic-addon2" />
+            <div class="input-group-text"><i data-feather="search"></i></div>
+          </div>
+        </form>
+      </div>
+    </li>
+    <!-- Alerts Dropdown-->
+
+    <!-- Messages Dropdown-->
+
+    <!-- User Dropdown-->
     <li class="nav-item dropdown no-caret dropdown-user me-3 me-lg-4">
       <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage"
         href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true"
-        aria-expanded="false"><img class="img-fluid" src="assets/img/illustrations/profiles/profile-2.png" /></a>
+        aria-expanded="false"><img class="img-fluid" src="assets/img/illustrations/profiles/profile-1.png" /></a>
       <div class="dropdown-menu dropdown-menu-end border-0 shadow animated--fade-in-up"
         aria-labelledby="navbarDropdownUserImage">
         <h6 class="dropdown-header d-flex align-items-center">
-          <img class="dropdown-user-img" src="assets/img/illustrations/profiles/profile-2.png" />
+          <img class="dropdown-user-img" src="assets/img/illustrations/profiles/profile-1.png" />
           <div class="dropdown-user-details">
-            <div class="dropdown-user-details-name">Alfredo</div>
-            <div class="dropdown-user-details-email"></div>
+
           </div>
         </h6>
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#!">
-          <div class="dropdown-item-icon"></div>
-          <i class="fa-solid fa-gear"></i> Minha Conta
-        </a>
-        <a class="dropdown-item" [routerLink]="['/sair']" routerLinkActive="router-link-active">
+        <a  class="dropdown-item" href="#!">
+                <div class="dropdown-item-icon"><i data-feather="settings"></i></div>
+                Minha Conta
+            </a>
+        <a class="dropdown-item" routerLink="logoff">
           <div class="dropdown-item-icon"><i data-feather="log-out"></i></div>
           Sair
         </a>
       </div>
-
     </li>
   </ul>
+
+
+
 
 </nav>
 <div id="layoutSidenav">
@@ -45,7 +72,7 @@
 
           <div class="sidenav-menu-heading">Gerencial</div>
           <a class="nav-link collapsed" routerLink="/dashboard">
-            <div class="nav-link-icon"><i class="fas fa-chart-line"></i></div>
+            <div class="nav-link-icon"> <i class="fas fa-chart-line"></i></div>
             Dashboard
           </a>
 
