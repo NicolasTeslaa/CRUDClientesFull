@@ -1,3 +1,4 @@
+import { AuthService } from 'src/app/services/auth.service';
 import { Component, ElementRef } from '@angular/core';
 
 @Component({
@@ -6,16 +7,21 @@ import { Component, ElementRef } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
-  constructor(private el: ElementRef) {
-
-
+  mostrarMenu = false;
+  constructor(private el: ElementRef, private authService: AuthService) {
+    this.mostraMenu();
   }
   title = 'CrudClientes';
   toogleMenu() {
-
     let myTag = this.el.nativeElement.querySelector("#sidebarToggle");
     myTag.classList.toggle('sidenav-toggled');
     document.body.classList.toggle('sidenav-toggled');
+  }
+
+  mostraMenu() {
+    this.authService.mostrarMenuEmitter.subscribe(
+      mostrar => this.mostrarMenu = mostrar
+
+    );
   }
 }
