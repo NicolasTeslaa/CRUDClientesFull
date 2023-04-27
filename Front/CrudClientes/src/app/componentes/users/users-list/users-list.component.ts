@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UsuariosService } from 'src/app/services/usuarios.service';
 
 @Component({
   selector: 'app-users-list',
@@ -6,12 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./users-list.component.css']
 })
 export class UsersListComponent {
-users: any;
-  constructor() {
-
+  users: any;
+  constructor(private usuariosService: UsuariosService) {
+    this.reloadUsuarios();
   }
 
-  removerUser(){
-    
+  reloadUsuarios() {
+    this.usuariosService.GetAll().subscribe((s) => {
+      this.users = s;
+    })
+  }
+
+  removerUser() {
+
   }
 }

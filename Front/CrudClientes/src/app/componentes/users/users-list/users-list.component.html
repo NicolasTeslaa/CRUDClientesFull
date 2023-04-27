@@ -2,13 +2,13 @@
   <div class="row mt-4">
     <div class="col-sm-6">
       <ng-container class="mt-4" *ngIf="users.length == 0">
-        <h3 class="text-muted">Não há clientes a serem exibidos</h3>
+        <h3 class="text-muted">Não há usuarios a serem exibidos</h3>
       </ng-container>
-      <div class="h3" *ngIf="users.length > 0">Lista de Clientes</div>
+      <div class="h3" *ngIf="users.length > 0">Lista de Usuarios</div>
     </div>
     <div class="col-sm-6 d-flex flex-row-reverse">
       <button class="btn btn-danger" routerLink="/cliente-add">
-        Adicionar Cliente
+        Adicionar Usuario
       </button>
     </div>
   </div>
@@ -17,10 +17,7 @@
       <tr>
         <th scope="col"></th>
         <th scope="col">Nome Completo</th>
-        <th scope="col">CPF</th>
-        <th scope="col">Celular</th>
         <th scope="col">Email</th>
-        <th scope="col">Data de Nascimento</th>
         <th></th>
       </tr>
     </thead>
@@ -40,10 +37,7 @@
             </svg></a>
         </th>
         <td>{{user.nomeCompleto}}</td>
-        <td>{{user.cpf}}</td>
-        <td>{{user.celular}}</td>
         <td>{{user.email}}</td>
-        <td>{{user.dataNascimento | date:'dd/MM/yyyy'}}</td>
         <td>
           <a (click)="removerUser()" style="cursor: pointer;">
             <svg height="30" id="trash" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
