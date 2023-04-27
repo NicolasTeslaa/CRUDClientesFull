@@ -36,7 +36,7 @@ export class ClienteEditComponent {
         this.router.navigate(['/']);
       })
       .catch(error => {
-        Swal.fire('Erro ao adicionar cliente!', `${error.message}`, 'error');
+        Swal.fire('Erro ao atualizar cliente!', `${error.message}`, 'error');
       })
     return;
   }

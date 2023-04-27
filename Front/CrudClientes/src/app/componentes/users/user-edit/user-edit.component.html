@@ -1,1 +1,65 @@
-<p>user-edit works!</p>
+<div class="container mt-2">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/users">Lista de Usuarios</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Criar Novo</li>
+    </ol>
+  </nav>
+
+  <div class="card mt-4">
+    <div class="card-header">
+      Novo Usuário
+    </div>
+    <div class="card-body">
+      <form action="" class="needs-validation">
+
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <div class="form-label">
+                Nome Completo
+              </div>
+              <input required="" type="text" class="form-control" name="nomeCompleto" [(ngModel)]="usuario.nomeCompleto"
+                maxlength="100">
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <div class="form-label">
+                Email
+              </div>
+              <input required type="email" class="form-control" placeholder="email@host.com.br" name="email"
+                [(ngModel)]="usuario.email" maxlength="100">
+            </div>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <div class="form-label">
+                Senha
+              </div>
+              <input required type="password" class="form-control" name="dataNascimento" [(ngModel)]="usuario.password">
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <div class="form-label">
+                Confirme sua nova senha
+              </div>
+              <input required type="password" class="form-control" name="dataNascimento"
+                [(ngModel)]="usuario.confPassword">
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="row mt-4">
+        <div class="col-sm-12 d-flex flex-row-reverse">
+          <button class="btn btn-danger" (click)="validate()">
+            Adicionar Usuário
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
