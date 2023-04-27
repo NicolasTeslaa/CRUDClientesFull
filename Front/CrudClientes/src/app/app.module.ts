@@ -19,6 +19,7 @@ import { UsersListComponent } from './componentes/users/users-list/users-list.co
 import { UserAddComponent } from './componentes/users/user-add/user-add.component';
 import { UserEditComponent } from './componentes/users/user-edit/user-edit.component';
 import { provideEnvironmentNgxMask } from 'ngx-mask';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { provideEnvironmentNgxMask } from 'ngx-mask';
     ],
   providers: [
     provideEnvironmentNgxMask(),
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
