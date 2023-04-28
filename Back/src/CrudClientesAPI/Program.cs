@@ -12,7 +12,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: "MyPolicy",
     policy =>
     {
-        policy.WithOrigins("localhost:4200", "http://localhost:4200", "https://localhost:4200")
+        policy.WithOrigins("localhost:4200", "http://crudclientes.azurewebsites.net", "https://crudclientes.azurewebsites.net")
         .AllowAnyHeader()
         .AllowAnyMethod()
         .AllowAnyOrigin();

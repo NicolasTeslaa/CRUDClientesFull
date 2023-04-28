@@ -4,5 +4,5 @@
 
 export const environment = {
   production: false,
-  ApiUrl: 'http://localhost:5160/api'
+  ApiUrl: 'https://backendcrudclientes.azurewebsites.net/api'
 };
