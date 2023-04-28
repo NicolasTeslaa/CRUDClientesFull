@@ -20,6 +20,7 @@ import { UserAddComponent } from './componentes/users/user-add/user-add.componen
 import { UserEditComponent } from './componentes/users/user-edit/user-edit.component';
 import { provideEnvironmentNgxMask } from 'ngx-mask';
 import { AuthService } from './services/auth.service';
+import { AuthGuard } from './services/guard/auth-guard';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,7 @@ import { AuthService } from './services/auth.service';
     ],
   providers: [
     provideEnvironmentNgxMask(),
-    AuthService
+    AuthService,
   ],
   bootstrap: [AppComponent]
 })

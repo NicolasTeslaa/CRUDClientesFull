@@ -19,7 +19,11 @@ export class AuthService {
     } else {
       Swal.fire('Email ou senha inválido!', ``, 'error');
       this.mostrarMenuEmitter.emit(false)
-
     }
   }
+
+  usuarioEstaAutenticado(){
+     this.usuarioAutenticado;
+  }
+
 }
