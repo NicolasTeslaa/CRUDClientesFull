@@ -48,6 +48,7 @@ import { AuthGuard } from './services/guard/auth-guard';
   providers: [
     provideEnvironmentNgxMask(),
     AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

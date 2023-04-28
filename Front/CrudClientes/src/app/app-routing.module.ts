@@ -12,21 +12,23 @@ import { DashboardComponent } from './componentes/dashboard/dashboard.component'
 import { UserAddComponent } from './componentes/users/user-add/user-add.component';
 import { UsersListComponent } from './componentes/users/users-list/users-list.component';
 import { UserEditComponent } from './componentes/users/user-edit/user-edit.component';
+import { AuthGuard } from './services/guard/auth-guard';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
-  { path: 'cliente-add', component: ClienteAddComponent },
-  { path: 'clientes', component: ClientesListComponent },
-  { path: 'cliente-edit/:id', component: ClienteEditComponent },
-  { path: 'user-add', component: UserAddComponent },
-  { path: 'users', component: UsersListComponent },
-  { path: 'user-edit/:id', component: UserEditComponent },
-  { path: 'register', component: RegisterComponent },
+  { path: '', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: 'cliente-add', component: ClienteAddComponent, canActivate: [AuthGuard] },
+  { path: 'clientes', component: ClientesListComponent, canActivate: [AuthGuard] },
+  { path: 'cliente-edit/:id', component: ClienteEditComponent, canActivate: [AuthGuard] },
+  { path: 'user-add', component: UserAddComponent, canActivate: [AuthGuard] },
+  { path: 'users', component: UsersListComponent, canActivate: [AuthGuard] },
+  { path: 'user-edit/:id', component: UserEditComponent, canActivate: [AuthGuard] },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   { path: 'forget-me', component: ForgetMeComponent },
   { path: 'forget-me-recupera', component: ForgetMeRecuperaComponent },
   { path: 'forget-me-email', component: ForgetMeEmailComponent },
-  { path: 'dashboard', component: DashboardComponent }
 ];
 
 @NgModule({
