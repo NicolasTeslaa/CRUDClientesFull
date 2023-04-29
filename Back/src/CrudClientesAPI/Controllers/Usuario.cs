@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace CrudClientes.Controllers;
 
 [ApiController]
-[Route("/api/[controller]")]
+[Route("api/[controller]")]
 public class UsuarioController : ControllerBase
 {
     private readonly Context _context;

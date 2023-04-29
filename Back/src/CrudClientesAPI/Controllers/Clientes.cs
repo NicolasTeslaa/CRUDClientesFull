@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace CrudClientes.Controllers;
 
 [ApiController]
-[Route("/api/[controller]")]
+[Route("api/[controller]")]
 public class Clientes : ControllerBase
 {
     private readonly Context _context;
@@ -17,7 +17,7 @@ public class Clientes : ControllerBase
 
     private readonly Context context;
 
-    [HttpGet("GetAllClientes")]
+    [HttpGet("Get")]
     public IEnumerable<Cliente> Get()
     {
         return _context.Clientes;
