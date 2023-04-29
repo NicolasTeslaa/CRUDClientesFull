@@ -1,30 +1,17 @@
 <div class="" *ngIf="mostrarMenu">
-  <nav class="topnav navbar navbar-expand shadow justify-content-between justify-content-sm-start navbar-dark"
-    id="sidenavAccordion">
-    <button (click)="toogleMenu()" class="btn btn-icon order-1 order-lg-0 me-2 ms-lg-2 me-lg-0" id="sidebarToggle">
-      <svg height="15" viewBox="0 0 271 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10.4797 10.5063H260.396" stroke="#292D32" stroke-width="20.8264" stroke-linecap="round" />
-        <path d="M10.4797 79.9276H260.396" stroke="#292D32" stroke-width="20.8264" stroke-linecap="round" />
-        <path d="M10.4797 149.349H260.396" stroke="#292D32" stroke-width="20.8264" stroke-linecap="round" />
-      </svg>
-    </button>
-    <a routerLink="/dashboard"><img src="../assets/img/favicon.ico.png" height="30" alt=""></a>
-    <ul class="navbar-nav align-items-center ms-auto">
-      <li class="nav-item dropdown no-caret me-3 d-lg-none">
-        <a class="btn btn-icon btn-transparent-light dropdown-toggle" id="searchDropdown" href="#" role="button"
-          data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i data-feather="search"></i></a>
-        <!-- Dropdown - Search-->
-        <div class="dropdown-menu dropdown-menu-end p-3 shadow animated--fade-in-up" aria-labelledby="searchDropdown">
-          <form class="form-inline me-auto w-100">
-            <div class="input-group input-group-joined input-group-solid">
-              <input class="form-control pe-0" type="text" placeholder="Search for..." aria-label="Proce"
-                aria-describedby="basic-addon2" />
-              <div class="input-group-text"><i data-feather="search"></i></div>
-            </div>
-          </form>
-        </div>
-      </li>
-    </ul>
+  <nav class="topnav navbar navbar-expand shadow justify-content-between  navbar-dark" id="sidenavAccordion">
+    <div class="">
+      <button (click)="toogleMenu()" class="btn btn-icon order-1 order-lg-0 me-2 ms-lg-2 me-lg-0" id="sidebarToggle">
+        <svg height="15" viewBox="0 0 271 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10.4797 10.5063H260.396" stroke="#292D32" stroke-width="20.8264" stroke-linecap="round" />
+          <path d="M10.4797 79.9276H260.396" stroke="#292D32" stroke-width="20.8264" stroke-linecap="round" />
+          <path d="M10.4797 149.349H260.396" stroke="#292D32" stroke-width="20.8264" stroke-linecap="round" />
+        </svg>
+      </button>
+      <a routerLink="/dashboard"><img src="../assets/img/favicon.ico.png" height="30" alt=""></a>
+    </div>
+    <a style="padding: 10px;" (click)="reload()" href="">Sair</a>
+
   </nav>
   <div id="layoutSidenav">
     <div id="layoutSidenav_nav" class="d-print-none">
@@ -69,7 +56,7 @@
         <div class="sidenav-footer">
           <div class="sidenav-footer-content">
             <div class="sidenav-footer-subtitle">Logado como:</div>
-            <div class="sidenav-footer-title"></div>
+            <div class="sidenav-footer-title"> </div>
           </div>
         </div>
       </nav>
