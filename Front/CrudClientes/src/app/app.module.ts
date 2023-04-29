@@ -21,7 +21,6 @@ import { UserEditComponent } from './componentes/users/user-edit/user-edit.compo
 import { provideEnvironmentNgxMask } from 'ngx-mask';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './services/guard/auth-guard';
-
 @NgModule({
   declarations: [
     AppComponent,
