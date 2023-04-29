@@ -23,7 +23,6 @@ const routes: Routes = [
   { path: 'users', component: UsersListComponent, canActivate: [AuthGuard] },
   { path: 'user-edit/:id', component: UserEditComponent, canActivate: [AuthGuard] },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
-
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'forget-me', component: ForgetMeComponent },

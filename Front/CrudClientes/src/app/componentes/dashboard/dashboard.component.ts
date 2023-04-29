@@ -16,8 +16,11 @@ export class DashboardComponent {
   }
 
   reloadClientes() {
+
     this.clientesService.GetAll().subscribe((s) => {
+
       this.clientes = s;
+
     })
   }
   reloadUsuarios() {
