@@ -17,7 +17,7 @@ public class Clientes : ControllerBase
 
     private readonly Context context;
 
-    [HttpGet("Get")]
+    [HttpGet("GetAllClientes")]
     public IEnumerable<Cliente> Get()
     {
         return _context.Clientes;
